@@ -1,7 +1,11 @@
 @import "bourbon/bourbon";
+@import url(https://fonts.googleapis.com/css?family=Fugaz+One);
 
 html, body {
     background-color: black;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fugaz One', cursive;
 }
 
 ul {
@@ -49,7 +53,7 @@ ul {
         div{
             z-index: 1000;
             position: absolute;
-            bottom: 20px;
+            bottom: 0px;
             left: 0px;
             width: 100%;
             text-align: center;
@@ -59,9 +63,10 @@ ul {
             
             h3 {
                 //font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-                font-size: 200px;
+                font-size: 150px;
                 padding: 0;
                 line-height: 200px;
+                display: none;
             }
         }
     }
@@ -138,22 +143,56 @@ ul {
 //Header Styling
 
 header {
-    width: 100%;
     position: fixed;
-    z-index: 10;
+    width: 100%;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0,0,0, .3);
 }
 
-nav ul {
-    display: inline;
+.navlinks {
+    
+    margin: 0;
+    padding: 0;
+    
+    //flex settings
+    @include align-items(center);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(center);
+    @include flex-wrap(wrap);
+    
+    .navlink {
+        
+        @include flex-grow(1);
+        @include flex-shrink(0);
+        height: 50px;
+        text-align: center;
+        @include transition(all .15s ease-in-out);
+        cursor: pointer;
+
+        a {
+            width: inherit;
+            height: 50px;
+            color: white;
+            text-decoration: none;
+            line-height: 50px;
+        }
+        
+        
+    }
+    
+    .navlink:hover {
+        background-color: rgba(200, 200, 200, .5);
+        color: black;
+    }
 }
 
-li a {
-    display: inline;
-    height: 50px;
-    line-height: 50px;
-    width: 100px;
-    color: white;
-    border: solid white 1px;
+#nav_toggle {
+    text-align: center;
+    display: none;
 }
+
 
 
