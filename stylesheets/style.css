@@ -1,6 +1,9 @@
 html, body {
   background-color: black; }
 
+ul {
+  list-style: none; }
+
 .cb-slideshow,
 .cb-slideshow:after {
   position: fixed;
@@ -113,5 +116,20 @@ html, body {
 @media screen and (max-width: 600px) {
   .cb-slideshow li div h3 {
     font-size: 80px; } }
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 10; }
+
+nav ul {
+  display: inline; }
+
+li a {
+  display: inline;
+  height: 50px;
+  line-height: 50px;
+  width: 100px;
+  color: white;
+  border: solid white 1px; }
 
 /*# sourceMappingURL=style.css.map */
